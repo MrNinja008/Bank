@@ -25,14 +25,15 @@ class EventListener implements Listener {
   public function onInteract(PlayerInteractEvent $event){
     
     $player = $event->getPlayer();
-		$name = $player->getName();
-		$inv = $player->getInventory();
-		$hand = $inv->getItemInHand();
-		$lore = $hand->getLore();
+    $name = $player->getName();
+    $inv = $player->getInventory();
+    $hand = $inv->getItemInHand();
+    $lore = $hand->getLore();
 
 	  
-  	if(!empty($lore)){
-    	if(C::clean($lore[2]) === "Interact with this pouch to redeem"){
+    if(!empty($lore)){
+      if(C::clean($lore[2]) === "Interact with this pouch to redeem"){
+        
         $nbt = $hand->getNamedTag();
         $value = $nbt->getInt("Ammount");
       	$count = $hand->getCount();
@@ -41,8 +42,8 @@ class EventListener implements Listener {
         $inv->setItemInHand($hand);
         EconomyAPI::getInstance()->addMoney($name, $amount);
      	  $player->sendMessage("§6You redeemed §b"."$"."$amount"." §6from the pouch");
-    	}
-	  }
+      }
+    }
   }
   public function onJoin(PlayerJoinEvent $event){
     
