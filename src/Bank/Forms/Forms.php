@@ -14,6 +14,14 @@ use pocketmine\nbt\tag\ByteTag;
 
 class Forms {
   
+  private $bank;
+  
+  private $economy;
+  
+  private $plugin;
+  
+  private $count;
+  
   public function __construct(Bank $plugin){
     
     $this->plugin = $plugin;
