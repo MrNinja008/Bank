@@ -14,13 +14,15 @@ use Bank\Forms\Forms;
 
 class Bank extends PluginBase {
   
+  private $bank;
+  
   public function onEnable(){
     
     if($this->getServer()->getPluginManager()->getPlugin("FormAPI") === null || $this->getServer()->getPluginManager()->getPlugin("EconomyAPI") === null){
       $this->getServer()->getPluginManager()->disablePlugin($this);
       $this->getLogger()->critical("Missing dependencies!");
       $this->getLogger()->critical("Disabling plugin...");
-      return true;
+      return;
     }
     $this->getServer()->getPluginManager()->registerEvents(new EventListener($this), $this);
     $this->getLogger()->info("Bank activated");
