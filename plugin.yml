@@ -3,6 +3,7 @@ author: HeavenlyPlaysDev
 main: Bank\Bank
 api: 3.0.0
 version: 1.0.0
+depend: ["FormAPI", "EconomyAPI"]
 commands:
   bank:
       description: "Bank Command"
