@@ -57,9 +57,9 @@ class Forms {
     });
     $form->setTitle("Bank");
     $form->addButton("Withdraw",0,"textures/ui/MCoin");
-    $form->addButton("Deposit",0,"textures/ui/MCoin");
-    $form->addButton("Create Pouch",0,"textures/items/paper");
-    $form->addButton("Send Money",0,"textures/ui/FriendsIcon");
+    $form->addButton("Deposit",0,"textures/ui/Chest_front");
+    $form->addButton("Create Pouch",0,"textures/items/map_filled");
+    $form->addButton("Transfer Money",0,"textures/ui/multiplayer_glyph_color");
     $form->addButton("§c§lExit",0,"textures/blocks/barrier");
     $form->sendToPlayer($player);
     return $form;
