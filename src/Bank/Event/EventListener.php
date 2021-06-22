@@ -39,6 +39,8 @@ class EventListener implements Listener {
 	  
     if(!empty($lore)){
       if(C::clean($lore[2]) === "Interact with this pouch to redeem"){
+      If(lisset($this->interactDelay[$player->getName()])){
+      $this-->interactDelay[$player->getName()] = time () + 1;
         
         $nbt = $hand->getNamedTag();
         $value = $nbt->getInt("Ammount");
